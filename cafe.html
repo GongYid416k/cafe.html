@@ -81,7 +81,7 @@
 
       // 第一次或尚未存過結果：抽獎並存進 localStorage
       if (!data || typeof data.isWinner === "undefined") {
-        const isWinner = Math.random() < 0.2; // 20% 機率可自行調整
+        const isWinner = Math.random() < 0.3; // 30% 機率可自行調整
         const now = new Date();
         const pad = n => String(n).padStart(2, "0");
         const timeStr =
@@ -100,12 +100,12 @@
         box.innerHTML = `
           <h1>🎉 恭喜你中獎了！</h1>
           <div class="time">開獎時間：${data.timeStr}</div>
-          <p>填寫表單即可兌換免費咖啡乙杯</p>`;
+          <p>填寫表單即可兌換免費中杯美式乙杯</p>`;
       } else {
         box.innerHTML = `
-          <h1>😢 很可惜這次沒中！</h1>
+          <h1>😢 很可惜這次沒中獎喔！</h1>
           <div class="time">開獎時間：${data.timeStr}</div>
-          <p>填寫表單可獲得中杯美式5元折價券</p>`;
+          <p>填寫問卷後可獲得中杯美式5元折價券</p>`;
       }
 
       // 建立「填表」按鈕
@@ -120,4 +120,3 @@
 
 </body>
 </html>
-
